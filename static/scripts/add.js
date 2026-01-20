@@ -1,3 +1,4 @@
+// File was used previously no longer needed
 
 const newFormTarger = document.getElementById("add-form");
 var equipmentOptions;

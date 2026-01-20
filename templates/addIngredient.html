@@ -12,6 +12,7 @@
     <script src="{{ url_for('static',filename='scripts/add.js') }}" defer></script>
 
 </head>
+
 <body>
     <form method="POST" action="/addIngredient" class="add-ingredient">
         <h2>Add Ingredient</h2>
@@ -19,12 +20,13 @@
         <label for="option">Choose Ingredient</label>
         <select name="option" id="option" onchange="chooseIngredientOnChange()">
             <option value=""></option>
-            <option value="add">---    New Ingredient   ---</option>
+            <option value="add">--- New Ingredient ---</option>
             {% for ingredient in ingredients %}
-                <option value={{ingredient[0]}}>{{ ingredient[1] }}</option>
+            <!--Jininja loop -->
+            <option value={{ingredient[0]}}>{{ ingredient[1] }}</option>
             {% endfor %}
         </select>
-          
+
         <button>Add</button>
     </form>
 </body>

@@ -28,10 +28,12 @@
         <textarea class="description" name="description">{{ saved.get('description', '') }}</textarea>
 
         <label for="PreparationTime">Preparation Time (minutes):</label>
-        <input type="number" class="preparationTime" name="preparationTime" min="0" required value="{{ saved.get('preparationTime', '') }}">
+        <input type="number" class="preparationTime" name="preparationTime" min="0" required
+            value="{{ saved.get('preparationTime', '') }}">
 
         <label for="CookingTime">Cooking Time (minutes):</label>
-        <input type="number" class="cookingTime" name="cookingTime" min="0" required value="{{ saved.get('cookingTime', '') }}">
+        <input type="number" class="cookingTime" name="cookingTime" min="0" required
+            value="{{ saved.get('cookingTime', '') }}">
 
         <label for="Servings">Servings:</label>
         <input type="number" class="servings" name="servings" min="1" required value="{{ saved.get('servings', '') }}">
@@ -49,7 +51,7 @@
         <div class="equipment">
             <h2>Equipment needed</h2>
             <!-- List here -->
-             {{equipment}}
+            {{equipment}}
         </div>
         <div class="ingredient">
             <h2>Ingredients needed</h2>
@@ -57,10 +59,6 @@
             {{ingredient}}
         </div>
     </div>
-
-    <!-- <div class="add-form" id="add-form">
-    </div> -->
-
 
 </body>
 
