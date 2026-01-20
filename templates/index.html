@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/index.css') }}">
+
+    <link rel="stylesheet" href="../static/styles/index.css">
+    <script src="../static/scripts/add.js" defer></script>
+    <script src="{{ url_for('static',filename='scripts/add.js') }}" defer></script>
+
+</head>
+
+<body>
+    <h2>Add New Recipe</h2>
+
+    <form action="/add_recipe" method="POST" class="add-recipe">
+
+        <label for="Title">Title:</label>
+        <input type="text" class="title" name="title" maxlength="100" value="{{ saved.get('title', '') }}" required>
+
+        <label for="Created_By">Created By:</label>
+        <input type="text" class="createdBy" name="createdBy" maxlength="100" value="{{ saved.get('createdBy', '') }}">
+
+        <label for="Description">Description:</label>
+        <textarea class="description" name="description">{{ saved.get('description', '') }}</textarea>
+
+        <label for="PreparationTime">Preparation Time (minutes):</label>
+        <input type="number" class="preparationTime" name="preparationTime" min="0" required value="{{ saved.get('preparationTime', '') }}">
+
+        <label for="CookingTime">Cooking Time (minutes):</label>
+        <input type="number" class="cookingTime" name="cookingTime" min="0" required value="{{ saved.get('cookingTime', '') }}">
+
+        <label for="Servings">Servings:</label>
+        <input type="number" class="servings" name="servings" min="1" required value="{{ saved.get('servings', '') }}">
+
+        <label for="Instructions">Instructions:</label>
+        <textarea class="instructions" name="instructions" required>{{ saved.get('instructions', '') }}</textarea>
+        <button type="submit" name="addEquipment" value="addEqu"> Add Equipment </button>
+
+        <button type="submit" name="addIngredient" value="addIng"> Add Ingredient </button>
+
+        <button type="submit">Add Recipe</button>
+    </form>
+
+    <div class="info">
+        <div class="equipment">
+            <h2>Equipment needed</h2>
+            <!-- List here -->
+             {{equipment}}
+        </div>
+        <div class="ingredient">
+            <h2>Ingredients needed</h2>
+            <!-- List here -->
+            {{ingredient}}
+        </div>
+    </div>
+
+    <!-- <div class="add-form" id="add-form">
+    </div> -->
+
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+html{
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body{
+    margin: 0;
+}
+
+.hidden{
+    display: none;
+}
+
+.add-recipe{
+    display: flex;
+    place-self: left;
+    margin-left: 20px;
+    flex-direction: column;
+    gap: 10px;
+    width: 450px;
+}
+
+.instructions{
+    resize: vertical;
+}
+
+
+.add-equipment, .add-ingredient{
+    display: flex;
+    place-self: right;
+    margin-left: 20px;
+    flex-direction: column;
+    gap: 10px;
+    width: 750px;
+}
+
+.info{
+    position: absolute;
+    right: 40%;
+    top: 20px;
+}
+
+.add-form{
+    position: absolute;
+    top: 200px;
+    right: 40px;
+}

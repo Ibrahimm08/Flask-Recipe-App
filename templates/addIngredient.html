@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/index.css') }}">
+
+    <link rel="stylesheet" href="../static/styles/index.css">
+    <script src="../static/scripts/add.js" defer></script>
+    <script src="{{ url_for('static',filename='scripts/add.js') }}" defer></script>
+
+</head>
+<body>
+    <form method="POST" action="/addIngredient" class="add-ingredient">
+        <h2>Add Ingredient</h2>
+
+        <label for="option">Choose Ingredient</label>
+        <select name="option" id="option" onchange="chooseIngredientOnChange()">
+            <option value=""></option>
+            <option value="add">---    New Ingredient   ---</option>
+            {% for ingredient in ingredients %}
+                <option value={{ingredient[0]}}>{{ ingredient[1] }}</option>
+            {% endfor %}
+        </select>
+          
+        <button>Add</button>
+    </form>
+</body>
